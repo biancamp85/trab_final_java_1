@@ -3,39 +3,35 @@ package controle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.KeyStroke;
+import visao.TelaPrincipal;
 
-import visao.TelaGerenciarPaciente;
+public class GerarPacienteControle implements ActionListener{
 
-public class GerarPacienteControle implements ActionListener {
-
-	private TelaGerenciarPaciente tgp;
+	private TelaPrincipal tp;
 	
 	
-	public GerarPacienteControle(TelaGerenciarPaciente tgp) {
+	public GerarPacienteControle(TelaPrincipal tp) {
 		super();
-		this.tgp = tgp;
+		this.tp = tp;
 		
-	    this.tgp.getButtonCadastraPaciente().addActionListener(this);
-		this.tgp.getButtonLimparTela().addActionListener(this);
+		this.tp.gettGP().getButtonLimparTela().addActionListener(this);
+		this.tp.gettGP().getButtonCadastraPaciente().addActionListener(this);
 	}
 
 
-@Override
-
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
 		if (e.getActionCommand().equals("Cadastrar Paciente")) {
-	}
-		else if (e.getActionCommand().equals("Limpar Tela")){
-			this.tgp.limparTelaGerenciarPaciente();
+		
 		}
-						
-			
-		//KeyStroke stroke = KeyStroke.getKeyStroke( KeyEvent.VK_ENTER, 0 );
+		else if (e.getActionCommand().equals("Limpar Tela")){
+				this.tp.gettGP().limparTelaGerenciarPaciente();
+		}
+	}
 
-    }
+
+
 
 }
 
