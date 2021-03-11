@@ -297,7 +297,90 @@ public class TelaPrincipal extends JFrame {
 		contentPane.add(tALA, "painelTALA");
 		contentPane.add(tPIA, "painelTPIA");
 		contentPane.add(tLVA, "painelTLVA");
-
+		
 	}
 
+	public CardLayout getCard() {
+		return card;
+	}
+
+	public void setCard(CardLayout card) {
+		this.card = card;
+	}
+
+	public TelaDeFundo gettDF() {
+		return tDF;
+	}
+
+	public void settDF(TelaDeFundo tDF) {
+		this.tDF = tDF;
+	}
+
+	public TelaGerarAtendimento gettGA() {
+		return tGA;
+	}
+
+	public void settGA(TelaGerarAtendimento tGA) {
+		this.tGA = tGA;
+	}
+
+	public TelaGerenciarPaciente gettGP() {
+		return tGP;
+	}
+
+	public void settGP(TelaGerenciarPaciente tGP) {
+		this.tGP = tGP;
+	}
+
+	public TelaGerarConsulta gettGC() {
+		return tGC;
+	}
+
+	public void settGC(TelaGerarConsulta tGC) {
+		this.tGC = tGC;
+	}
+
+	public TelaEncaminharInternacao gettEI() {
+		return tEI;
+	}
+
+	public void settEI(TelaEncaminharInternacao tEI) {
+		this.tEI = tEI;
+	}
+
+	public TelaFinalizarAtendimento gettFA() {
+		return tFA;
+	}
+
+	public void settFA(TelaFinalizarAtendimento tFA) {
+		this.tFA = tFA;
+	}
+
+	public TelaAguardandoLeitoALA gettALA() {
+		return tALA;
+	}
+
+	public void settALA(TelaAguardandoLeitoALA tALA) {
+		this.tALA = tALA;
+	}
+
+	public TelaPacientesInternadosALA gettPIA() {
+		return tPIA;
+	}
+
+	public void settPIA(TelaPacientesInternadosALA tPIA) {
+		this.tPIA = tPIA;
+	}
+
+	public TelaLeitosVagosALA gettLVA() {
+		return tLVA;
+	}
+
+	public void settLVA(TelaLeitosVagosALA tLVA) {
+		this.tLVA = tLVA;
+	}
+
+	
+	
+	
 }
