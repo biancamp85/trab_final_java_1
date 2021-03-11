@@ -19,6 +19,8 @@ public class GerarPacienteControle implements ActionListener{
 	}
 
 
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -29,6 +31,9 @@ public class GerarPacienteControle implements ActionListener{
 				this.tp.gettGP().limparTelaGerenciarPaciente();
 		}
 	}
+	
+	
+	
 
 
 
