@@ -5,7 +5,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import net.miginfocom.swing.MigLayout;
+
 import java.awt.Color;
+
 import javax.swing.border.MatteBorder;
 import javax.swing.text.MaskFormatter;
 import javax.swing.DefaultComboBoxModel;
@@ -13,15 +15,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+
 import java.awt.Font;
 import java.text.ParseException;
 
 import javax.swing.JFormattedTextField;
+
 import java.awt.Component;
+
 import javax.swing.SwingConstants;
 
 public class TelaGerenciarPaciente extends JPanel {
-	private JTextField fieldNomDaMae;
+	private JTextField fieldNomeDaMae;
 	private JTextField fieldNomedoPai;
 	private JTextField fieldNomePaciente;
 	private JFormattedTextField formatedFieldDataNascimento;
@@ -30,21 +35,20 @@ public class TelaGerenciarPaciente extends JPanel {
 	private JTextArea textAreaInfoGerenciarPacientes;
 	private JButton buttonCadastraPaciente;
 	private JButton buttonLimparTela;
-
+	private JTextField fieldEndereco;
 	/**
 	 * Create the panel.
 	 */
 	public TelaGerenciarPaciente() {
 		setBorder(new MatteBorder(0, 10, 0, 0, (Color) new Color(51, 204, 153)));
-		setLayout(new MigLayout("", "[175.00,grow][130.00,grow][130.00,grow][130.00,grow][242.00,grow]",
-				"[][10][][5][][5][][5][][grow][]"));
+		setLayout(new MigLayout("", "[175.00,grow][130.00,grow][130.00,grow][130.00,grow][242.00,grow]", "[][10][][5][][5][][5][][5][][grow][]"));
 
 		JLabel labelCabecalho = new JLabel("Gerenciamento de Pacientes");
 		labelCabecalho.setFont(new Font("Tahoma", Font.BOLD, 16));
-		add(labelCabecalho, "cell 0 0 5 1");
+		add(labelCabecalho, "cell 0 0 5 1,grow");
 
 		JLabel labelCpfPaciente = new JLabel("CPF");
-		add(labelCpfPaciente, "flowx,cell 0 2");
+		add(labelCpfPaciente, "flowx, cell 0 2");
 
 		JLabel labelNomePaciente = new JLabel("Nome");
 		add(labelNomePaciente, "flowx,cell 1 2 4 1,alignx left,gapx 5");
@@ -62,30 +66,37 @@ public class TelaGerenciarPaciente extends JPanel {
 
 		JLabel labelNomePai = new JLabel("Nome do Pai");
 		add(labelNomePai, "flowx,cell 0 8 5 1");
+		
+		JLabel lblEndereo = new JLabel("Endere\u00E7o");
+		add(lblEndereo, "flowx,cell 0 10 5 1");
 
-		fieldNomDaMae = new JTextField();
-		add(fieldNomDaMae, "cell 0 6 5 1,growx");
-		fieldNomDaMae.setColumns(10);
+		fieldNomeDaMae = new JTextField();
+		add(fieldNomeDaMae, "cell 0 6 5 1,growx, gapx10");
+		fieldNomeDaMae.setColumns(10);
 
 		fieldNomedoPai = new JTextField();
 		add(fieldNomedoPai, "cell 0 8 5 1,growx,gapx 10");
 		fieldNomedoPai.setColumns(10);
+		
+		fieldEndereco = new JTextField();
+		add(fieldEndereco, "cell 0 10 5 1,growx, gapx 10");
+		fieldEndereco.setColumns(10);
 
 		textAreaInfoGerenciarPacientes = new JTextArea();
-		add(textAreaInfoGerenciarPacientes, "cell 0 9 5 1,grow");
+		add(textAreaInfoGerenciarPacientes, "cell 0 11 5 1,grow");
 
 		buttonCadastraPaciente = new JButton("Cadastrar Paciente");
 		buttonCadastraPaciente.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		buttonCadastraPaciente
 				.setIcon(new ImageIcon(TelaGerenciarPaciente.class.getResource("/iconesImagens/icons8-ok-200.png")));
-		add(buttonCadastraPaciente, "flowx,cell 0 10 5 1,alignx center");
+		add(buttonCadastraPaciente, "flowx,cell 0 12 5 1,alignx center");
 		buttonCadastraPaciente.setActionCommand("Cadastrar Paciente");
 
 		buttonLimparTela = new JButton("Limpar");
 		buttonLimparTela.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		buttonLimparTela.setIcon(
 				new ImageIcon(TelaGerenciarPaciente.class.getResource("/iconesImagens/icons8-cancelar-20.png")));
-		add(buttonLimparTela, "cell 0 10 5 1");
+		add(buttonLimparTela, "cell 0 12 5 1");
 		buttonLimparTela.setActionCommand("Limpar Tela");
 
 		MaskFormatter mascaraData;
@@ -102,7 +113,7 @@ public class TelaGerenciarPaciente extends JPanel {
 			formatedFieldCPF.setColumns(10);
 			formatedFieldCPF.setAlignmentX(1.0f);
 			add(formatedFieldCPF, "cell 0 2");
-
+			
 			formatedFieldDataNascimento = new JFormattedTextField(mascaraData);
 			formatedFieldDataNascimento.setHorizontalAlignment(SwingConstants.LEFT);
 			formatedFieldDataNascimento.setColumns(7);
@@ -115,6 +126,7 @@ public class TelaGerenciarPaciente extends JPanel {
 
 			JLabel labelDataNascimento = new JLabel("Data de Nascimento");
 			add(labelDataNascimento, "cell 2 4,alignx left");
+			
 
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -124,21 +136,22 @@ public class TelaGerenciarPaciente extends JPanel {
 
 	public void limparTelaGerenciarPaciente() {
 		textAreaInfoGerenciarPacientes.setText("");
-		fieldNomDaMae.setText("");
+		fieldNomeDaMae.setText("");
 		fieldNomedoPai.setText("");
 		fieldNomePaciente.setText("");
+		fieldEndereco.setText("");
 		formatedFieldDataNascimento.setText("");
 		formatedFieldCPF.setText("");
 		comboBox.setSelectedIndex(0);
 		
 	}
 
-	public JTextField getFieldNomDaMae() {
-		return fieldNomDaMae;
+	public JTextField getFieldNomeDaMae() {
+		return fieldNomeDaMae;
 	}
 
-	public void setFieldNomDaMae(JTextField fieldNomDaMae) {
-		this.fieldNomDaMae = fieldNomDaMae;
+	public void setFieldNomeDaMae(JTextField fieldNomeDaMae) {
+		this.fieldNomeDaMae = fieldNomeDaMae;
 	}
 
 	public JTextField getFieldNomedoPai() {
@@ -204,12 +217,21 @@ public class TelaGerenciarPaciente extends JPanel {
 	public void setButtonLimparTela(JButton buttonLimparTela) {
 		this.buttonLimparTela = buttonLimparTela;
 	}
-	
-		public void limpartelagerar() {
-			
-				
-			}
 
-		
-		
+	public JTextField getfieldEndereco() {
+		return fieldEndereco;
+	}
+
+	public void setfieldEndereco(JTextField fieldEndereco) {
+		this.fieldEndereco = fieldEndereco;
+	}
+
+	public JTextField getFieldEndereco() {
+		return fieldEndereco;
+	}
+
+	public void setFieldEndereco(JTextField fieldEndereco) {
+		this.fieldEndereco = fieldEndereco;
+	}
+
 }
