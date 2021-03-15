@@ -1,25 +1,22 @@
 package visao;
 
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-
-import net.miginfocom.swing.MigLayout;
 import java.awt.Color;
-import javax.swing.border.MatteBorder;
-import javax.swing.text.MaskFormatter;
+import java.awt.Font;
+import java.text.ParseException;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.text.ParseException;
-
 import javax.swing.JFormattedTextField;
-import java.awt.Component;
-import javax.swing.SwingConstants;
-import java.awt.Label;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.MatteBorder;
+import javax.swing.text.MaskFormatter;
+
+import net.miginfocom.swing.MigLayout;
 
 public class TelaGerarAtendimento extends JPanel {
 	private JTextField textFieldAlaInternacao;
@@ -38,7 +35,7 @@ public class TelaGerarAtendimento extends JPanel {
 	 */
 	@SuppressWarnings({})
 	public TelaGerarAtendimento() {
-		setBorder(new MatteBorder(0, 10, 0, 0, (Color) new Color(51, 204, 153)));
+		setBorder(new MatteBorder(0, 10, 0, 0, (Color) new Color(178, 34, 34)));
 		setLayout(new MigLayout("", "[2.00px][142.00,grow][97.00,grow][73.00][206.00][]",
 				"[1px][][5][][5][][5][][5][][60][][grow][]"));
 
@@ -83,8 +80,8 @@ public class TelaGerarAtendimento extends JPanel {
 		textAreaDescriProblema = new JTextArea();
 		add(textAreaDescriProblema, "cell 1 10 4 1,grow");
 
-		JLabel labelObservações = new JLabel("Observa\u00E7\u00F5es ");
-		add(labelObservações, "cell 1 11");
+		JLabel labelObservaÃ§Ãµes = new JLabel("Observa\u00E7\u00F5es ");
+		add(labelObservaÃ§Ãµes, "cell 1 11");
 
 		textAreaObservacao = new JTextArea();
 		add(textAreaObservacao, "cell 1 12 4 1,grow");
